@@ -10,8 +10,8 @@ var chapter_1 = __importDefault(require("./routes/chapter"));
 var story_1 = __importDefault(require("./routes/story"));
 var app = express_1.default();
 var PORT = 4000;
-app.listen(PORT, function () {
-    console.log("Listening on port " + PORT);
+app.listen(process.env.PORT || PORT, function () {
+    console.log("Server is running");
 });
 app.use(cors_1.default());
 app.use(express_1.default.urlencoded({ extended: true })); //handles form-encoded post data in req.body

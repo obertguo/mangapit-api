@@ -8,8 +8,8 @@ import storyRoute from './routes/story';
 const app = express();
 const PORT = 4000;
 
-app.listen(PORT, () =>{
-    console.log(`Listening on port ${PORT}`);
+app.listen(process.env.PORT || PORT, () =>{
+    console.log(`Server is running`);
 });
 
 app.use(cors());
