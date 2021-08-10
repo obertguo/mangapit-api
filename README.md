@@ -4,11 +4,12 @@
 
 | ROUTE | METHOD |
 |-------|--------|
-| /searchstory | POST | {searchword: search} | 200 if results are found. 400 there are no results |  
-| /chapter/:storyID/:chapterNumber | 
+| /searchstory | POST |
+| /chapter/:storyID/:chapterNumber | GET | 
+| /chapter/getImageBuffer | POST |
+| /story/:storyID | GET | 
 
-
-
+---------------------------------------
 # /searchstory 
 `Method` POST\
 `Body`
@@ -30,7 +31,7 @@ interface StorySearchResultResponse {
     author: string
 }
 ```
-
+---------------------------------------
 # /chapter/:storyID/:chapterNumber
 `Method` GET\
 `Response` Returns a ChapterResponse and a 200 OK if chapter information is found or a 400 BAD REQUEST
@@ -43,7 +44,7 @@ interface ChapterResponse{
     nextChapterNumber: string
 }
 ```
-
+---------------------------------------
 # /chapter/getImageBuffer
 `Method` POST\
 `Body` 
@@ -56,7 +57,7 @@ interface getImageBufferBody{
 ```
 getImageBufferResponse: string
 ```
-
+---------------------------------------
 # /story/:storyID
 `Method` GET\
 `Response` Returns story information and a 200 OK if the story is found or a 400 BAD REQUEST 
